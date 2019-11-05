@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Login from "./pages/login/login"
+import Admin from "./pages/admin/admin"
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
+
     render() {
         return (
-            <div>App</div>
+            <Router>
+                <Switch>
+                    <Route path="/login" component={Login}/>
+                    <Route path="/" component={Admin}/>
+                </Switch>
+            </Router>
         );
     }
 }
